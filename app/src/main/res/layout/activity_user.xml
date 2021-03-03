@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/water_theme"
+    android:background="@color/teal_700"
     tools:context=".UserActivity">
 
     <LinearLayout
@@ -31,11 +31,11 @@
             android:layout_height="match_parent"
 
 
+            android:indeterminate="false"
+            android:indeterminateDrawable="@drawable/my_progressbar_drawable"
+            android:indeterminateDuration="5000"
             android:max="100"
             android:progress="0"
-            android:indeterminate="false"
-            android:indeterminateDuration="5000"
-            android:indeterminateDrawable="@drawable/my_progressbar_drawable"
 
             />
 

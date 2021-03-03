@@ -12,71 +12,102 @@
         android:id="@+id/txt_grow"
         android:layout_width="190dp"
         android:layout_height="40dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="24dp"
         android:ems="10"
         android:hint="рост"
         android:inputType="number"
         android:textAlignment="center"
         android:textColor="@color/material_on_primary_emphasis_high_type"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="232dp" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="90dp"
-        android:layout_height="40dp"
-        android:text="Пол"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="72dp"
-        tools:layout_editor_absoluteY="358dp" />
-
-    <Switch
-        android:id="@+id/Switch_Gender_ID"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="358dp" />
-
-    <EditText
-        android:id="@+id/txt_weight"
-        android:layout_width="190dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:hint="вес"
-        android:inputType="number"
-        android:textAlignment="center"
-        android:textColor="@color/material_on_primary_emphasis_high_type"
-        tools:layout_editor_absoluteX="159dp"
-        tools:layout_editor_absoluteY="296dp" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="90dp"
-        android:layout_height="40dp"
-        android:text="Вес"
-        android:textColor="@color/material_on_primary_emphasis_high_type"
-        android:textSize="24sp"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="296dp" />
+        app:layout_constraintBottom_toTopOf="@+id/txt_weight"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView6"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.52" />
 
     <TextView
         android:id="@+id/textView6"
         android:layout_width="90dp"
         android:layout_height="40dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginBottom="24dp"
         android:text="Рост"
         android:textColor="@color/material_on_primary_emphasis_high_type"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="232dp" />
+        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintEnd_toStartOf="@+id/txt_grow"
+        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51" />
+
+    <EditText
+        android:id="@+id/txt_weight"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:hint="вес"
+        android:inputType="number"
+        android:textAlignment="center"
+        android:textColor="@color/material_on_primary_emphasis_high_type"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/txt_grow" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="21dp"
+        android:text="Вес"
+        android:textColor="@color/material_on_primary_emphasis_high_type"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/textView2"
+        app:layout_constraintEnd_toStartOf="@+id/txt_weight"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="90dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="69dp"
+        android:text="Пол"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/Switch_Gender_ID"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="357dp" />
+
+    <Switch
+        android:id="@+id/Switch_Gender_ID"
+        android:layout_width="190dp"
+        android:layout_height="40dp"
+        android:layout_marginEnd="62dp"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/textView2"
+        tools:layout_editor_absoluteY="358dp" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Button_Next_ID"
         android:layout_width="276dp"
         android:layout_height="39dp"
 
+        android:layout_marginStart="73dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginEnd="62dp"
+        android:layout_marginBottom="50dp"
         android:background="?android:attr/autofilledHighlight"
         android:drawableRight="@android:drawable/ic_menu_send"
         android:enabled="true"
@@ -84,19 +115,27 @@
         android:padding="10dp"
         android:text="Перейти"
         android:textColor="#CFCC06"
-        tools:layout_editor_absoluteX="73dp"
-        tools:layout_editor_absoluteY="514dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="278dp"
         android:layout_height="45dp"
+        android:layout_marginStart="69dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="64dp"
+        android:layout_marginBottom="45dp"
         android:ellipsize="end"
         android:text="Пол"
         android:textAlignment="center"
         android:textColor="@color/material_on_primary_emphasis_high_type"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="69dp"
-        tools:layout_editor_absoluteY="424dp" />
+        app:layout_constraintBottom_toTopOf="@+id/Button_Next_ID"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
