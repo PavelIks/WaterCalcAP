@@ -12,7 +12,22 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity
+{
+    public class UserClass
+    {
+        private String sexUser;
+        private int weightUser;
+        private int growUser;
+
+        public UserClass(String sexuser,int weightuser,int growuser)
+        {
+            this.sexUser=sexuser;
+            this.weightUser=weightuser;
+            this.growUser=growuser;
+        }
+    }
+
     Switch switchSex;
     TextView txtWeight, txtGrow, txtGender, txtFemale;
     Button btnNext;
@@ -21,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private final static String FILE_NAME = "test.txt";
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
@@ -52,56 +68,50 @@ public class MainActivity extends AppCompatActivity {
                     } 
             }
         });
-
     }
 
-    @Override
-    protected void onPause() {
-        super.onPause();
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-    }
-
-    public void nextMethod(View v) {
+    public void nextMethod(View v)
+    {
         String getsex;
 
-        if (switchSex.isChecked()) {
+        if (switchSex.isChecked())
+        {
             getsex = "Женщина";
-        } else {
-            getsex = "Мужчина";
         }
+        else
+            {
+                getsex = "Мужчина";
+            }
         if (txtWeight.getText().length() != 0 && txtGrow.getText().length() != 0 && Integer.parseInt(txtGrow.getText().toString()) < 200 && Integer.parseInt(txtWeight.getText().toString()) < 300) {
             {
                 user = new UserClass(getsex, Integer.parseInt(txtWeight.getText().toString()), Integer.parseInt(txtGrow.getText().toString()));
                 FileOutputStream fos = null;
-                try {
+                try
+                {
                     fos = openFileOutput(FILE_NAME, MODE_PRIVATE);
                     fos.write(("Рост:" + txtGrow.getText().toString() + ";\nВес : " + txtWeight.getText().toString() + ";\nПол : " + getsex).toString().getBytes());
                     Toast.makeText(getApplicationContext(), "SAVED!", Toast.LENGTH_SHORT).show();
-                } catch (FileNotFoundException e) {
+                }
+                catch (FileNotFoundException e)
+                {
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                } catch (IOException e) {
+                }
+                catch (IOException e)
+                {
                     Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
-                } finally {
-                    try {
-                        if (fos != null) {
+                }
+                finally
+                {
+                    try
+                    {
+                        if (fos != null)
+                        {
                             fos.close();
                         }
 
-                    } catch (IOException e) {
+                    }
+                    catch (IOException e)
+                    {
                         Toast.makeText(getApplicationContext(), e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 }
